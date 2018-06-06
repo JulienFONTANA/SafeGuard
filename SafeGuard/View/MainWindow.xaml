@@ -1,0 +1,28 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SafeGuard"
+        xmlns:Enum="clr-namespace:SafeGuard.Enum" x:Class="SafeGuard.MainWindow"
+        mc:Ignorable="d"
+        Title="SafeGuard" Height="360" Width="540" ResizeMode="NoResize" Icon="/SafeGuard;component/Icons/Safe.png" Background="#FFE0E0E0">
+    <Grid>
+        <TextBlock x:Name="EncryptionTypeTB" HorizontalAlignment="Left" Margin="25,23,0,0" TextWrapping="Wrap" Text="Type :" VerticalAlignment="Top"/>
+        <ComboBox x:Name="EncryptionTypeDDL" HorizontalAlignment="Left" Margin="61,20,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0" IsReadOnly="True">
+            <ComboBox.DataContext>
+                <Enum:EncryptionType>Cesar</Enum:EncryptionType>
+            </ComboBox.DataContext>
+        </ComboBox>
+        <TextBlock x:Name="EncryptionKeyTB" HorizontalAlignment="Left" Margin="203,23,0,0" TextWrapping="Wrap" Text="Key :" VerticalAlignment="Top" RenderTransformOrigin="0.219,0.577"/>
+        <TextBox x:Name="EncryptionKeyInputText" HorizontalAlignment="Left" Height="23" Margin="240,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" MaxLength="17"/>
+        <RadioButton x:Name="EncryptRB" Content="Encrypt" HorizontalAlignment="Left" Margin="376,23,0,0" VerticalAlignment="Top" IsChecked="True"/>
+        <RadioButton x:Name="DecryptRB" Content="Decrypt" HorizontalAlignment="Left" Margin="449,23,0,0" VerticalAlignment="Top"/>
+        <TextBlock x:Name="InputTB" HorizontalAlignment="Left" Margin="25,57,0,0" TextWrapping="Wrap" Text="Input :" VerticalAlignment="Top"/>
+        <TextBlock x:Name="OutputTB" HorizontalAlignment="Left" Margin="260,57,0,0" TextWrapping="Wrap" Text="Output :" VerticalAlignment="Top"/>
+        <TextBox x:Name="InputText" HorizontalAlignment="Left" Height="200" Margin="25,80,0,0" TextWrapping="Wrap" Text="Write the code to Encrypt/Decrypt here." VerticalAlignment="Top" Width="200" SnapsToDevicePixels="True"/>
+        <TextBox x:Name="OutputText" HorizontalAlignment="Left" Height="200" Margin="260,80,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="230" IsReadOnly="True"/>
+        <Button x:Name="StartBtn" Content="Go !" HorizontalAlignment="Left" Margin="431,292,0,0" VerticalAlignment="Top" Width="75" Click="StartBtn_Click"/>
+        <Button x:Name="ResetBtn" Content="Reset" HorizontalAlignment="Left" Margin="345,293,0,0" VerticalAlignment="Top" Width="75" Click="ResetBtn_Click"/>
+    </Grid>
+</Window>
